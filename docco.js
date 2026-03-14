@@ -296,6 +296,9 @@
         config.public = path.join(dir, 'public');
       }
       config.template = path.join(dir, 'docco.jst');
+      if (config.css && path.extname(config.css) !== '.css') {
+        config.css = path.join(dir, `${config.css}.css`);
+      }
       config.css = config.css || path.join(dir, 'docco.css');
     }
     config.template = _.template(fs.readFileSync(config.template).toString());
