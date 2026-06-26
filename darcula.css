@@ -321,6 +321,7 @@ ul.sections > li > div {
     border: none;
     -webkit-box-shadow: none;
     box-shadow: none;
+    max-width: calc(100vw - 350px - 46px);
   }
 
   .sswrap {
@@ -368,6 +369,7 @@ ul.sections > li > div {
   }
   ul.sections > li > div.content {
     padding: 9px 15px 16px 25px;
+    max-width: calc(100vw - 525px - 46px);
   }
 }
 
@@ -506,4 +508,14 @@ pre .hljs-chunk {
 
 pre .hljs-tex .hljs-formula {
   opacity: 0.5;
+}
+
+/* Enable code wrapping in the right-hand pane */
+ul.sections > li > div.content {
+  white-space: normal; /* Override the 'nowrap' inherited from the parent 'li' */
+}
+
+ul.sections > li > div.content pre {
+  white-space: pre-wrap; /* Instruct the browser to wrap preformatted code lines */
+  word-break: break-all;  /* Break extremely long unbroken strings (like long variables or URLs) */
 }
